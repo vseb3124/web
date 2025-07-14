@@ -10,47 +10,6 @@
     font-weight: bold; 
 }
 
-@media (max-width: 768px) {
-  body > header {
-    flex-direction: column;
-    height: auto; /* nech sa prispôsobí výške */
-    padding: 10px 0;
-    align-items: center;
-  }
-
-  #logo {
-    margin: 0 0 10px 0;
-    background-size: 30px 30px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-  }
-
-  nav ul li {
-    padding: 10px 0;
-    margin: 0;
-    text-align: center;
-    line-height: 1.5em;
-  }
-}
-
-@media (max-width: 480px) {
-  body > header {
-    padding: 5px 0;
-  }
-  
-  #logo h1 {
-    font-size: 1.2em;
-  }
-  
-  nav ul li {
-    font-size: 0.9em;
-    padding: 8px 0;
-  }
-}
 
 html {
     background: #414042;
@@ -64,20 +23,26 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 100px 0px 0px 0px;
+    padding-top: 120px;
    
 }
 
 body > header {
-    height: 100px;
+    height: auto;  /* zmena z pevnej výšky 100px na auto */
+    padding: 10px 20px; /* pridaj padding, nech obsah nemá tesno */
+    display: flex;
+    justify-content: space-between; /* namiesto space-evenly */
+    align-items: center; /* vertikálne vycentruje */
+    position: fixed;
+    top: 0;
     width: 100%;
     background: #00386B;
     color: white;
-    display: flex;
-    justify-content: space-evenly;
-    position: fixed;
     z-index: 1;
-    top: 0;
+    box-sizing: border-box;
 }
+
+
 
 #logo {
     height: 40px;
@@ -87,6 +52,7 @@ body > header {
     justify-content: center;
     background: url('images/logo.png') no-repeat;
     background-size: 40px 40px;
+    min-width: 150px;
 }
 
 #logo > * {
@@ -110,21 +76,28 @@ body > header {
     font-size: 0.85em;
 }
 
+nav {
+    overflow-x: auto;      
+    white-space: nowrap;   
+    flex-grow: 1;         
+}
+
 nav ul {
+    display: inline-flex;  
     margin: 0;
+    padding: 0;
     list-style-type: none;
-    display: flex;
     align-items: center;
-    height: 100%;
+    white-space: nowrap;
 }
 
 
 nav ul li {
-    padding: 0 25px;
-    margin: 0 5px;
+    padding: 0 12px;
+    margin: 0;
     font-size: 1em;
-    line-height: 4.3em;
-
+    line-height: 3.5em;
+    display: inline-block;
 }
 
 nav ul a {
