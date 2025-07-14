@@ -10,6 +10,48 @@
     font-weight: bold; 
 }
 
+@media (max-width: 768px) {
+  body > header {
+    flex-direction: column;
+    height: auto; /* nech sa prispôsobí výške */
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  #logo {
+    margin: 0 0 10px 0;
+    background-size: 30px 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  body > header {
+    padding: 5px 0;
+  }
+  
+  #logo h1 {
+    font-size: 1.2em;
+  }
+  
+  nav ul li {
+    font-size: 0.9em;
+    padding: 8px 0;
+  }
+}
+
 html {
     background: #414042;
 }
