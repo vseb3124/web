@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: Poppins;
     src: url(fonts/Poppins-Regular.ttf);
@@ -7,53 +8,62 @@
 @font-face {
     font-family: Poppins;
     src: url(fonts/Poppins-ExtraBold.ttf);
-    font-weight: bold;
+    font-weight: bold; 
 }
+
 
 html {
     background: #414042;
 }
 
 body {
-    font-family: Poppins, sans-serif;
+    font-family: Poppins;
     font-size: 14px;
-    color: #414042;
+    color:#414042;
     background: #F9F9F9;
     box-sizing: border-box;
     margin: 0;
-    padding: 100px 0 0 0;
+    padding: 100px 0px 0px 0px;
+    padding-top: 120px;
+   
 }
 
-/* ===== HEADER + LOGO + MENU ===== */
 body > header {
+    height: auto;  /* zmena z pevnej výšky 100px na auto */
+    padding: 10px 20px; /* pridaj padding, nech obsah nemá tesno */
+    display: flex;
+    justify-content: space-between; /* namiesto space-evenly */
+    align-items: center; /* vertikálne vycentruje */
+    position: fixed;
+    top: 0;
     width: 100%;
     background: #00386B;
     color: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
     z-index: 1;
-    top: 0;
-    padding: 10px 20px;
     box-sizing: border-box;
 }
 
+
+
 #logo {
+    height: 40px;
+    margin: auto 0 auto 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url('images/logo.png') no-repeat left center;
+    background: url('images/logo.png') no-repeat;
     background-size: 40px 40px;
-    padding-left: 60px;
-    margin: 5px 0;
+    min-width: 150px;
+}
+
+#logo > * {
+    margin: 0 0 0 50px;
 }
 
 #logo h1 {
     font-weight: normal;
     font-size: 1.5em;
-    margin: 0;
+    line-height: 1.2em;
     color: white;
 }
 
@@ -67,39 +77,74 @@ body > header {
     font-size: 0.85em;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
+nav {
+    overflow-x: auto;      
+    white-space: nowrap;   
+    flex-grow: 1;         
 }
 
+nav ul {
+    display: inline-flex;  
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+    white-space: nowrap;
+}
+
+
 nav ul li {
-    padding: 5px 10px;
-    margin: 3px;
+    padding: 0 12px;
+    margin: 0;
     font-size: 1em;
+    line-height: 3.5em;
+    display: inline-block;
 }
 
 nav ul a {
     color: white;
-    padding: 6px 10px;
+    padding: 8px 0;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-nav ul a:hover,
-.active a {
+nav ul a:hover, .active a {
     border-bottom: 2px solid #EF6534;
 }
 
-/* ===== OBSAH ===== */
+#skills td {
+    width: 25%;
+    vertical-align: top;
+    padding: 6px;
+    box-shadow: 3px 3px 6px #999999;
+    margin-right: 6px;
+}
+ 
+#references img {
+    border: 1px solid gray;
+    padding: 6px;
+    box-shadow: 3px 3px 6px #999999;
+    margin-right: 6px;
+}
+.css{
+    box-shadow: 3px 3px 6px #999999;
+    max-height: 70%;
+
+}
+
+#references a {
+    text-decoration: none;
+}
+
+#references a:hover {
+    text-decoration: none;
+}
+
 article {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 0 auto; 
     padding: 50px 50px 10px 50px;
+    
 }
 
 article h1,
@@ -125,6 +170,7 @@ article h2 {
     font-size: 2em;
 }
 
+
 article header {
     height: 80px;
 }
@@ -137,9 +183,7 @@ article section p {
 article section a {
     color: #EF6534;
 }
-
-/* ===== OBRÁZOK ===== */
-.avatar {
+.avatar{
     float: right;
     width: 100%;
     max-width: 300px;
@@ -147,15 +191,13 @@ article section a {
     filter: grayscale(1);
 }
 
-.cleaner {
+.cleaner{
     clear: both;
 }
-
 .centered {
     text-align: center;
 }
 
-/* ===== TLAČIDLÁ ===== */
 .paragraph-button {
     margin-top: 50px;
 }
@@ -176,42 +218,12 @@ article section a {
     border-radius: 20px;
 }
 
-.contact-button:hover,
-.references-button:hover {
+.contact-button:hover, .references-button:hover {
     filter: brightness(115%) contrast(85%);
     border: 0;
 }
 
-/* ===== SKILLS a REFERENCES ===== */
-#skills td {
-    width: 25%;
-    vertical-align: top;
-    padding: 6px;
-    box-shadow: 3px 3px 6px #999999;
-    margin-right: 6px;
-}
 
-#references img {
-    border: 1px solid gray;
-    padding: 6px;
-    box-shadow: 3px 3px 6px #999999;
-    margin-right: 6px;
-}
-
-.css {
-    box-shadow: 3px 3px 6px #999999;
-    max-height: 70%;
-}
-
-#references a {
-    text-decoration: none;
-}
-
-#references a:hover {
-    text-decoration: none;
-}
-
-/* ===== FOOTER ===== */
 footer {
     box-sizing: border-box;
     text-align: center;
@@ -219,50 +231,18 @@ footer {
     color: white;
     background: #414042;
     padding: 50px 0 0 0;
-    clip-path: polygon(0 30px, 100% 0, 100% 105%, 0 105%);
+    clip-path: polygon(0 30px, 100% 0, 100% 105%, 0 105%);    
 }
 
 footer a {
-    color: white;
+    color: white; 
     text-decoration: none;
-}
-
-footer .year {
-    color: #EF6534;
 }
 
 .left {
     float: left;
 }
 
-/* ===== MEDIA QUERIES – mobil a tablet ===== */
-@media screen and (max-width: 768px) {
-    #logo {
-        width: 100%;
-        background-position: center;
-        padding-left: 0;
-        text-align: center;
-        align-items: center;
-    }
-
-    #logo h1 {
-        font-size: 1.2em;
-    }
-
-    nav ul {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .avatar {
-        float: none;
-        display: block;
-        margin: 0 auto;
-        padding: 10px 0;
-        max-width: 70%;
-    }
-
-    article {
-        padding: 30px 20px 10px 20px;
-    }
+footer year {
+    color:#EF6534;
 }
